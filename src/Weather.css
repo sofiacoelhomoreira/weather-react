@@ -1,0 +1,40 @@
+#city {
+    text-align: center;
+    font-size: 29px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: "Crete Round", serif;
+  }
+  
+  .temperature {
+    font-size: 50px;
+    font-family: "Lemonada", cursive;
+  }
+  
+  .unit {
+    position: relative;
+    top: -30px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Lemonada", cursive;
+  }
+  
+  .weather-icon {
+    position: relative;
+    top: 10px;
+    color: #522d5b;
+  }
+  
+  ul {
+    color: #522d5b;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-weight: bold;
+  }
+  
+  li {
+    list-style: none;
+    font-size: 17px;
+    top: 5px;
+  }
+  

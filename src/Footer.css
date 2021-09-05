@@ -1,0 +1,24 @@
+p {
+    text-align: center;
+    font-size: 17px;
+    color: white;
+    margin-top: 15px;
+    font-family: "Lemonada", cursive;
+  }
+  
+  footer {
+    font-size: 17px;
+    margin-left: 15px;
+    text-align: left;
+    color: #faf1bd;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  i {
+    color: white;
+  }

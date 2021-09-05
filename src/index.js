@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+import './Footer.css';
 import App from './App';
+import Moon from './Moon';
+import Form from './Form';
+import Weather from './Weather';
+
+import Footer from './Footer';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+
+    <div className="border">
+    <Moon />
+  
+    <Form />
+    <Weather />
     <App />
+    </div>
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
