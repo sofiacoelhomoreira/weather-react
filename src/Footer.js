@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
       <a
-        href="https://github.com/sofiacoelhomoreira/weather-app"
+        href="https://github.com/sofiacoelhomoreira/weather-react"
         target="blank"
       >
         <i class="fab fa-github"></i>
