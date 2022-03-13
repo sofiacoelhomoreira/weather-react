@@ -1,7 +1,10 @@
 import React from "react";
+import axios from "axios";
 
 import "./Weather.css";
 export default function Weather() {
+  let apiKey= "fa1fc144426a6842b1f023d4da2157de";
+  let apiUrl= `http://api.openweathermap.org/data/2.5/weather?${city}&appid=${apiKey}`
   let data = {
     city: "São Paulo",
     temperature: 20,
