@@ -1,5 +1,5 @@
 .Form {
-    padding: 15px;
+    padding: 5px;
   }
   
   .type-city {
@@ -8,16 +8,17 @@
     border-top: #fee140;
     border-left-color: #fa709a;
     border-bottom-color: #fa709a;
+    background-color: rgb(247, 231, 188);
   }
   
   .click-search {
-    background-color: white;
+    background-color: rgb(247, 231, 188);
     border-radius: 15px;
     border: solid 2px orange;
   }
   
   .here-search {
-    background-color: white;
+    background-color: rgb(247, 231, 188);
     opacity: 70%;
     border-radius: 15px;
     border: solid 2px rgb(245, 185, 73);
