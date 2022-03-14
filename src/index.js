@@ -11,6 +11,7 @@ import Weather from './Weather';
 import Footer from './Footer';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
   <React.StrictMode>
 
@@ -18,7 +19,7 @@ ReactDOM.render(
     <Moon />
   
     <Form />
-    <Weather defaultCity="New York"/>
+    <Weather defaultCity="Paris"/>
     <App />
     </div>
     <Footer />
