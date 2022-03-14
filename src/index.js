@@ -18,7 +18,7 @@ ReactDOM.render(
     <Moon />
   
     <Form />
-    <Weather />
+    <Weather defaultCity="New York"/>
     <App />
     </div>
     <Footer />

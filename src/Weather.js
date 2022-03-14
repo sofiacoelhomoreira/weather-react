@@ -1,30 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import "./Weather.css";
-export default function Weather() {
-  let apiKey= "fa1fc144426a6842b1f023d4da2157de";
-  let apiUrl= `http://api.openweathermap.org/data/2.5/weather?${city}&appid=${apiKey}`
-  let data = {
-    city: "São Paulo",
-    temperature: 20,
-    update: "Saturday 10:00",
-    description: "Sunny",
-    icon: "https://ssl.gstatic.com/onebox/weather/48/sunny.png",
-    humidity: 50,
-    wind: 16
-  };
+export default function Weather(props) {
+    
+    const [weatherData, setWeatherData] = useState({ready: false});
+
+  function handleResponse(response){
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      date: "Sunday 20:00",
+    });
+  }
+
+  if (weatherData.ready) {
+
   return (
     <div className="Weather">
       <div id="city" className="city">
-        {data.city}
+        {weatherData.city}
       </div>
 
       <div className="row">
         <div className="col-3">
           <div className="weather-icon">
             <img
-              src={data.icon}
+              src={"https://ssl.gstatic.com/onebox/weather/48/sunny.png"}
               alt="dataicon"
               id="weather-icon"
               className="float-left"
@@ -34,7 +41,7 @@ export default function Weather() {
 
         <div class="col-3">
           <span className="temperature" id="temp">
-            {data.temperature}
+            {weatherData.temperature}
           </span>
           <span className="unit">
             <strong>°C</strong>
@@ -43,16 +50,16 @@ export default function Weather() {
         <div className="col-6">
           <ul id="weather-list" className="weather-list">
             <li>
-              <span id="description" className="description"></span>
-              {data.description}
+              <span id="description" className="description">{weatherData.description}</span>
+              
             </li>
             <li>
-              humidity: <span id="humidity" className="humidity"></span>%
-              {data.humidity}
+              humidity: <span id="humidity" className="humidity">{weatherData.humidity}</span>%
+              
             </li>
             <li>
-              wind: <span id="wind" className="wind"></span>km/h
-              {data.wind}
+              wind: <span id="wind" className="wind">{weatherData.wind}</span>km/h
+              
             </li>
           </ul>
         </div>
@@ -62,9 +69,17 @@ export default function Weather() {
         Last updated:{" "}
         <span id="update-time" className="update">
           {" "}
-          {data.update}{" "}
+          {weatherData.date} {" "}
         </span>{" "}
       </p>
     </div>
   );
+} else {
+
+let apiKey= "fa1fc144426a6842b1f023d4da2157de";
+let apiUrl= `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(handleResponse);
+
+return "Loading...";
+}
 }
