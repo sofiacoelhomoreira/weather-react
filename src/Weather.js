@@ -1,33 +1,16 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import FormattedDate from "./FormattedDate";
 import "./Weather.css";
+
 export default function Weather(props) {
-    
-
-    const [weatherData, setWeatherData] = useState({ready: false});
-
-  function handleResponse(response){
-    console.log(response.data);
-    setWeatherData({
-      ready: true,
-      temperature: response.data.main.temp,
-      humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
-      wind: response.data.wind.speed,
-      city: response.data.name,
-      date: new Date(response.data.dt * 1000),
-    });
-  }
-
-  if (weatherData.ready) {
-
   return (
     <div className="Weather">
-      <div id="city" className="city">
-        {weatherData.city}
-      </div>
 
+      <div className= "nameCity" id="name">
+       <h3>
+        {props.data.city}
+      </h3>
+      </div>
       <div className="row">
         <div className="col-3">
           <div className="weather-icon">
@@ -42,7 +25,7 @@ export default function Weather(props) {
 
         <div class="col-3">
           <span className="temperature" id="temp">
-            {weatherData.temperature}
+            {props.data.temperature}
           </span>
           <span className="unit">
             <strong>°C</strong>
@@ -51,15 +34,15 @@ export default function Weather(props) {
         <div className="col-6">
           <ul id="weather-list" className="weather-list">
             <li>
-              <span id="description" className="description">{weatherData.description}</span>
+              <span id="description" className="description">{props.data.description}</span>
               
             </li>
             <li>
-              humidity: <span id="humidity" className="humidity">{weatherData.humidity}</span>%
+              humidity: <span id="humidity" className="humidity">{props.data.humidity}</span>%
               
             </li>
             <li>
-              wind: <span id="wind" className="wind">{weatherData.wind}</span>km/h
+              wind: <span id="wind" className="wind">{props.data.wind}</span>km/h
               
             </li>
           </ul>
@@ -70,17 +53,9 @@ export default function Weather(props) {
         Last updated:{" "}
         <span id="update-time" className="update">
           {" "}
-          <FormattedDate date={weatherData.date}/> {" "}
+          <FormattedDate date={props.data.date}/> {" "}
         </span>{" "}
       </p>
     </div>
   );
-} else {
-
-let apiKey= "fa1fc144426a6842b1f023d4da2157de";
-let apiUrl= `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(handleResponse);
-
-return "Loading...";
-}
-}
+} 
