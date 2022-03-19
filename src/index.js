@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Footer.css';
 import App from './App';
 import Moon from './Moon';
-import Weather from './Weather';
 import Search from './Search';
 import Footer from './Footer';
 import reportWebVitals from './reportWebVitals';
@@ -18,7 +17,6 @@ ReactDOM.render(
     <Moon />
   
     <Search defaultCity="Paris"/>
-    <Weather />
     <App />
     </div>
     <Footer />
