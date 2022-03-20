@@ -20,11 +20,9 @@ export default function Search(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
+      icon: response.data.weather[0].icon
     });
   }
-
-
-
 
   function updateCitySearch(){
     const apiKey= "fa1fc144426a6842b1f023d4da2157de";

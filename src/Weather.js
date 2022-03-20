@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import "./Weather.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
   return (
@@ -14,12 +15,7 @@ export default function Weather(props) {
       <div className="row">
         <div className="col-3">
           <div className="weather-icon">
-            <img
-              src={"https://ssl.gstatic.com/onebox/weather/48/sunny.png"}
-              alt="dataicon"
-              id="weather-icon"
-              className="float-left"
-            />
+        <WeatherIcon getIcon={props.data.icon}></WeatherIcon>
           </div>
         </div>
 
