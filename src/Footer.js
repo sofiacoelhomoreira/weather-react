@@ -10,7 +10,7 @@ export default function Footer() {
         target="blank"
       >
         <i class="fab fa-github"></i>
-        {""}
+        
       </a>
       Open-source code by Sofia Coelho Moreira
       <a
